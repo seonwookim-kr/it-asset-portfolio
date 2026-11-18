@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>김선우 | IT 구매·자산 관리 포트폴리오</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#14161a; --ink2:#3d434d; --ink3:#6b7280;
+  --line:#e3e6ea; --bg:#ffffff; --bg2:#f6f7f9;
+  --pt:#1b4ed8; --pt-soft:#eef2fe;
+  --ok:#0f7b52; --warn:#9a6b00; --no:#8a2a2a;
+  --max:960px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Noto Sans KR',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  color:var(--ink); background:var(--bg); line-height:1.72;
+  font-size:16px; -webkit-font-smoothing:antialiased;
+  word-break:keep-all;
+}
+.wrap{max-width:var(--max); margin:0 auto; padding:0 28px}
+
+/* ---------- header ---------- */
+header{border-bottom:1px solid var(--line); padding:64px 0 44px; background:var(--bg)}
+.eyebrow{font-size:12px; letter-spacing:.16em; color:var(--pt); font-weight:700; margin-bottom:18px}
+h1{font-size:40px; font-weight:900; letter-spacing:-.02em; line-height:1.2}
+h1 small{display:block; font-size:17px; font-weight:500; color:var(--ink2); margin-top:14px; letter-spacing:0}
+.meta{margin-top:26px; display:flex; flex-wrap:wrap; gap:8px 22px; font-size:13.5px; color:var(--ink3)}
+.meta b{color:var(--ink2); font-weight:500}
+
+/* ---------- stats ---------- */
+.stats{display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line);
+  border:1px solid var(--line); margin:44px 0 8px}
+.stat{background:var(--bg); padding:22px 18px}
+.stat .n{font-size:30px; font-weight:900; letter-spacing:-.02em; line-height:1.1}
+.stat .n i{font-style:normal; font-size:16px; font-weight:700; margin-left:2px}
+.stat .l{font-size:12.5px; color:var(--ink3); margin-top:8px; line-height:1.5}
+.statnote{font-size:12px; color:var(--ink3); margin-bottom:8px}
+
+/* ---------- sections ---------- */
+section{padding:56px 0; border-bottom:1px solid var(--line)}
+.sec-h{display:flex; align-items:baseline; gap:14px; margin-bottom:30px}
+.sec-n{font-size:12px; font-weight:700; color:var(--pt); letter-spacing:.12em}
+h2{font-size:23px; font-weight:800; letter-spacing:-.01em}
+.lead{color:var(--ink2); font-size:15.5px; margin-bottom:26px; max-width:72ch}
+
+/* ---------- fit table ---------- */
+table{width:100%; border-collapse:collapse; font-size:14.5px}
+th,td{text-align:left; padding:14px 14px; border-bottom:1px solid var(--line); vertical-align:top}
+th{font-size:12px; letter-spacing:.06em; color:var(--ink3); font-weight:700;
+   border-bottom:1.5px solid var(--ink); padding-bottom:10px; white-space:nowrap}
+td.jd{font-weight:600; width:27%}
+td.lv{width:62px; text-align:center; white-space:nowrap; font-weight:700; font-size:13px}
+.lv-a{color:var(--ok)} .lv-b{color:var(--pt)} .lv-c{color:var(--warn)} .lv-d{color:var(--no)}
+
+/* ---------- case ---------- */
+.case{margin-bottom:52px}
+.case:last-child{margin-bottom:0}
+.case-h{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:6px}
+.case-n{font-size:11.5px; font-weight:800; color:#fff; background:var(--ink);
+  padding:3px 9px; border-radius:3px; letter-spacing:.06em}
+h3{font-size:19px; font-weight:800; letter-spacing:-.01em}
+.case-sub{font-size:13px; color:var(--ink3); margin-bottom:20px}
+
+.flow{display:flex; align-items:center; gap:0; flex-wrap:wrap; margin:22px 0 24px;
+  border:1px solid var(--line); background:var(--bg2)}
+.fl{flex:1 1 0; min-width:92px; padding:16px 10px; text-align:center; border-right:1px solid var(--line)}
+.fl:last-child{border-right:0}
+.fl.hi{background:var(--pt-soft)}
+.fl .v{font-size:25px; font-weight:900; letter-spacing:-.02em; line-height:1.1}
+.fl.hi .v{color:var(--pt)}
+.fl .k{font-size:11.5px; color:var(--ink3); margin-top:6px; line-height:1.45}
+
+.spn{display:grid; grid-template-columns:76px 1fr; gap:0 18px; font-size:15px}
+.spn dt{font-size:11.5px; font-weight:700; color:var(--pt); letter-spacing:.08em;
+  padding-top:5px; border-top:1px solid var(--line)}
+.spn dd{padding:4px 0 16px; border-top:1px solid var(--line); color:var(--ink2)}
+.spn dd:last-child{padding-bottom:0}
+.spn strong{color:var(--ink); font-weight:700}
+
+ul.tick{list-style:none; margin-top:10px}
+ul.tick li{position:relative; padding-left:16px; margin-bottom:6px; font-size:14.5px; color:var(--ink2)}
+ul.tick li::before{content:''; position:absolute; left:0; top:11px; width:5px; height:5px;
+  border-radius:50%; background:var(--ink3)}
+
+.note{background:var(--bg2); border-left:3px solid var(--pt); padding:16px 20px;
+  font-size:14px; color:var(--ink2); margin-top:20px}
+.note b{color:var(--ink)}
+
+/* ---------- scope ---------- */
+.scope{display:grid; grid-template-columns:1fr 1fr; gap:26px}
+.sbox{border:1px solid var(--line); padding:22px 24px}
+.sbox h4{font-size:13px; letter-spacing:.06em; margin-bottom:14px; font-weight:800}
+.sbox.can h4{color:var(--ok)} .sbox.cant h4{color:var(--no)}
+.sbox li{font-size:14px; color:var(--ink2); margin-bottom:9px; padding-left:14px; position:relative; list-style:none}
+.sbox li::before{content:''; position:absolute; left:0; top:10px; width:5px; height:5px; border-radius:50%}
+.sbox.can li::before{background:var(--ok)} .sbox.cant li::before{background:var(--no)}
+
+/* ---------- footer ---------- */
+footer{padding:46px 0 72px; font-size:13px; color:var(--ink3)}
+footer .fin{font-size:15px; color:var(--ink2); margin-bottom:22px; max-width:70ch}
+footer b{color:var(--ink); font-weight:700}
+.disc{font-size:12px; line-height:1.75; color:var(--ink3); border-top:1px solid var(--line); padding-top:18px; margin-top:22px}
+
+@media (max-width:760px){
+  .wrap{padding:0 20px}
+  h1{font-size:29px}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .scope{grid-template-columns:1fr}
+  .spn{grid-template-columns:1fr; gap:0}
+  .spn dt{border-top:1px solid var(--line); padding-top:12px}
+  .spn dd{border-top:0; padding-top:2px}
+  td.jd{width:auto}
+  table{font-size:13.5px}
+  th,td{padding:11px 8px}
+}
+@media print{
+  body{font-size:11pt} header{padding-top:0}
+  section{page-break-inside:avoid; padding:26px 0}
+  .case{page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow">DAOU TECH · 경영지원 · IT 구매 및 자산 관리</div>
+    <h1>김선우
+      <small>업무시스템을 구축하면서 라이선스와 계정, 공수를 함께 세어 온 PM입니다.</small>
+    </h1>
+    <div class="meta">
+      <span><b>더존비즈온</b> UC구축Unit 대리</span>
+      <span>2023.01.02 ~ 재직 중 (3년 10개월)</span>
+      <span>ksw9694@gmail.com</span>
+      <span>010-4884-9694</span>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="n">39<i>건</i></div><div class="l">주담당 PM<br>(그룹웨어·인사·경영지원)</div></div>
+      <div class="stat"><div class="n">12<i>건</i></div><div class="l">전사 ERP 통합 사업<br>그룹웨어 모듈 PL</div></div>
+      <div class="stat"><div class="n">77<i>건</i></div><div class="l">누적 참여<br>(현장실습 기간 20건 포함)</div></div>
+      <div class="stat"><div class="n">39<i>건</i></div><div class="l">PM 담당 건 전량<br>관리자·전사 교육 직접 진행</div></div>
+    </div>
+    <div class="statnote">PL 12건 중 5억원 이상 8건. 금액은 타 모듈을 포함한 전사 계약 규모이며 본인 단독 매출이 아닙니다. 고객사명은 업종·규모로 표기합니다.</div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="sec-h"><span class="sec-n">01</span><h2>공고 담당업무와 겹치는 지점</h2></div>
+    <p class="lead">다섯 항목 중 지금 바로 할 수 있는 것과 배워야 하는 것을 먼저 구분했습니다.</p>
+    <table>
+      <tr><th>공고 담당업무</th><th>해당 경험</th><th>수준</th></tr>
+      <tr>
+        <td class="jd">임직원 IT 자원<br>도입 및 관리 기획</td>
+        <td>구축 착수 시 보유 라이선스로 실사용 인원을 수용 가능한지 점검, 증설 전 회수·재배정. 퇴사·재입사 계정 처리와 오처리 복구</td>
+        <td class="lv lv-a">바로</td>
+      </tr>
+      <tr>
+        <td class="jd">용역 계약 및<br>프로젝트 구매 지원</td>
+        <td>PM 39건·PL 12건의 범위·일정·공수 관리. 그룹웨어 전용 구축 공수(M/M) 산정 기준을 부서에서 처음 정립</td>
+        <td class="lv lv-b">바로</td>
+      </tr>
+      <tr>
+        <td class="jd">컴플라이언스 준수</td>
+        <td>고객사 계정 접근 절차 준수, 금융권 폐쇄망 DRM 복호화 조율, 웹오피스 외부 유출 방지 다운로드 제어</td>
+        <td class="lv lv-b">바로</td>
+      </tr>
+      <tr>
+        <td class="jd">재고 및 원가 관리</td>
+        <td>사업 범위를 공수로 환산하는 기준까지. 물품 재고와 원가 집계는 경험 없음</td>
+        <td class="lv lv-c">일부</td>
+      </tr>
+      <tr>
+        <td class="jd">IT 상품 및<br>유지보수(MA) 구매</td>
+        <td>공급사 대상 산출·협상 경험 없음. 구매자가 받는 숫자를 어떻게 검증하는지는 반대편에서 봐 왔음</td>
+        <td class="lv lv-d">학습</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-h"><span class="sec-n">02</span><h2>사례</h2></div>
+
+    <div class="case">
+      <div class="case-h"><span class="case-n">CASE 01</span><h3>추가 계약 대신 정리를 제안해 계약 수량보다 적게 끝낸 건</h3></div>
+      <div class="case-sub">상위 제품 전환 고객사 · 사용자 수 기준 라이선스</div>
+
+      <div class="flow">
+        <div class="fl"><div class="v">300</div><div class="k">레거시 계약</div></div>
+        <div class="fl"><div class="v">200</div><div class="k">신규 축소 계약</div></div>
+        <div class="fl"><div class="v">220</div><div class="k">레거시 실제 할당</div></div>
+        <div class="fl hi"><div class="v">190<i>여</i></div><div class="k">정리 후 오픈<br>(추가 계약 없음)</div></div>
+      </div>
+
+      <dl class="spn">
+        <dt>상황</dt><dd>고객사가 퇴사자 발생을 감안해 300개를 200개로 줄여 계약했는데, 레거시 할당은 220개였습니다. 그대로 열면 임직원 일부가 시스템을 쓰지 못합니다.</dd>
+        <dt>판단</dt><dd>영업 관점에서는 20개 이상 추가 계약을 제안할 자리였습니다. <strong>220개가 전부 실제로 쓰이는 자리인지 확인하지 않고 늘리면 고객은 앞으로 몇 년간 빈 자리에 돈을 냅니다.</strong> 증설 대신 정리를 먼저 제안했습니다.</dd>
+        <dt>수행</dt><dd>고객사 전산·인사·회계 담당과 함께 세 가지 유형으로 걷어냈습니다.
+          <ul class="tick">
+            <li>메일 전용 라이선스를 대표메일 정책으로 전환 (부서·팀 메일, 세금계산서, 채용)</li>
+            <li>퇴사했으나 퇴사 처리가 되지 않은 계정</li>
+            <li>조직도 표시 목적만으로 유지되던 계정</li>
+          </ul>
+        </dd>
+        <dt>결과</dt><dd>190여 개로 오픈. 추가 계약은 발생하지 않았고, 제 회사 매출 기준으로는 손해였습니다.</dd>
+      </dl>
+
+      <div class="note"><b>남은 기준.</b> 계약 수량과 할당 수량과 실사용 수량은 서로 다른 숫자입니다. 관리 화면이 보여주는 것은 할당 수량이고, 그중 실제로 쓰이는 자리를 발라내야 실사용입니다. 이후 구축 건에서는 증설 요청 전에 이 세 숫자를 먼저 나눠 봅니다.</div>
+    </div>
+
+    <div class="case">
+      <div class="case-h"><span class="case-n">CASE 02</span><h3>퇴사자 포함 2,000명분 계정을 재직자 기준으로 다시 맞춘 건</h3></div>
+      <div class="case-sub">ERP 사용자 ↔ 그룹웨어 사용자 매핑</div>
+
+      <div class="flow">
+        <div class="fl"><div class="v">2,000<i>명분</i></div><div class="k">퇴사자 포함 잔존 계정</div></div>
+        <div class="fl"><div class="v">200<i>개</i></div><div class="k">재직자 기준 신규 계약</div></div>
+        <div class="fl"><div class="v">3<i>회</i></div><div class="k">초기화 후 매핑 재수행</div></div>
+        <div class="fl hi"><div class="v">0<i>건</i></div><div class="k">오픈 후 수량·매핑 이슈</div></div>
+      </div>
+
+      <dl class="spn">
+        <dt>수행</dt><dd>퇴사자와 재직자를 먼저 구분하고, ERP 사용자와 그룹웨어 사용자가 서로 맞물리도록 엑셀로 매핑했습니다. 한 번에 끝내지 않고 초기화 후 두세 번 다시 돌렸습니다. 오가는 엑셀의 1차 차이 비교는 생성형 AI로 뽑고, <strong>맞고 틀림의 판단 기준은 그 회사 현업에 두고 최종본은 담당자 확인을 받은 뒤 업로드</strong>했습니다.</dd>
+        <dt>결과</dt><dd>라이선스 수량과 사용자 매핑 모두 이상 없이 운영 중입니다.</dd>
+      </dl>
+    </div>
+
+    <div class="case">
+      <div class="case-h"><span class="case-n">CASE 03</span><h3>사업 범위를 숫자로 환산하는 기준을 부서에서 처음 만든 건</h3></div>
+      <div class="case-sub">그룹웨어 전용 구축 공수(M/M) 산정 기준</div>
+      <dl class="spn">
+        <dt>상황</dt><dd>그룹웨어는 전사 ERP 사업에 묶여 들어가는 경우가 많아, 모듈 단위로 공수를 얼마나 잡아야 하는지 기준이 없었습니다. 담당자마다 다르게 잡혔습니다.</dd>
+        <dt>수행</dt><dd>구축 범위와 투입 기간을 정리해 그룹웨어 전용 공수(M/M) 산정 기준을 세웠고, 원격지원 커리큘럼·교육 점검 체크리스트·표준 구축 일정표를 함께 표준화해 배포했습니다. 다건 프로젝트 현황은 JIRA로 관리했습니다.</dd>
+        <dt>결과</dt><dd>범위가 늘어날 때 무엇이 얼마나 늘어나는지 같은 단위로 말할 수 있게 됐습니다. 프로젝트가 어디서 일정을 늘리고 어디서 추가 계약이 나오는지는 파는 쪽에 있었기 때문에 압니다.</dd>
+      </dl>
+    </div>
+
+    <div class="case">
+      <div class="case-h"><span class="case-n">CASE 04</span><h3>아무도 재지 않던 수작업 시간을 직접 집계해 줄인 건</h3></div>
+      <div class="case-sub">전자결재 양식 제작 방법론 · 생성형 AI 업무 도구 자체 제작 (부서 최초)</div>
+
+      <div class="flow">
+        <div class="fl"><div class="v">6.7<i>개월</i></div><div class="k">사내 게시판 실측 기간</div></div>
+        <div class="fl"><div class="v">100<i>건</i></div><div class="k">접수 (97건 완료)</div></div>
+        <div class="fl"><div class="v">19.4<i>일</i></div><div class="k">건당 평균 제작 기간</div></div>
+        <div class="fl hi"><div class="v">1~2<i>일</i></div><div class="k">방법론 적용 후<br>(5개 고객사)</div></div>
+      </div>
+
+      <dl class="spn">
+        <dt>판단</dt><dd>오래 걸린다는 말을 체감으로 하지 않으려고 사내 접수 게시판을 직접 집계했습니다. 편차는 1일에서 44일까지였습니다.</dd>
+        <dt>수행</dt><dd>생성형 AI를 쓰는 양식 제작 방법론을 정리해 5개 고객사에 적용했습니다. 같은 방식으로 반복 수작업을 도구로 만들어 사업부문에 배포했습니다.
+          <ul class="tick">
+            <li>조건을 넣으면 포털 구성안을 도출하는 설계 도구 (포틀릿 35종 대상)</li>
+            <li>고객사 정보를 넣으면 방화벽 정책 요청서를 Excel·PDF로 생성하는 도구</li>
+            <li>상위 제품 전환 고객사의 조직도·코드를 표준 양식으로 변환하는 도구</li>
+          </ul>
+        </dd>
+        <dt>결과</dt><dd>엑셀에서 레거시 코드와 표준 코드를 하나씩 대조해 옮기던 작업이 자동화됐습니다. 배포 전 사용 가능 여부는 직접 검토했고, 가이드는 IT 비담당자도 읽을 수 있게 썼습니다.</dd>
+      </dl>
+    </div>
+
+    <div class="case">
+      <div class="case-h"><span class="case-n">CASE 05</span><h3>연동이 멈췄을 때 기다리지 않고 원인을 제거한 건</h3></div>
+      <div class="case-sub">ERP ↔ 그룹웨어 조직도 연동</div>
+      <dl class="spn">
+        <dt>상황</dt><dd>오픈 이후 연동 이력 중 미완료 건이 8개월간 누적돼, 신규 입사자 4명의 계정이 생성되지 않고 있었습니다.</dd>
+        <dt>수행</dt><dd>이력 큐를 확인해 중복 키로 배치가 매번 같은 지점에서 멈추고 있다는 것을 찾았습니다. 연동 비대상 이력은 스킵 처리하고 막힌 지점을 해소했습니다. 구조상 직접 손댈 수 없는 그룹웨어 측은 확인 결과를 정리해 개발팀에 전달했습니다.</dd>
+        <dt>결과</dt><dd>미완료 잔여 0건, 배치 정상화, 신규 입사자 4명 계정 등록 완료.</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-h"><span class="sec-n">03</span><h2>남의 자산과 계정을 다룰 때 지키는 순서</h2></div>
+    <p class="lead">고객사 계정에 직접 들어가야 하는 작업이 반복해서 생깁니다. 그때마다 같은 순서를 지켰습니다.</p>
+    <ul class="tick">
+      <li>고객사 담당자 승인을 먼저 받습니다.</li>
+      <li>담당자가 계정 사용자 본인에게 다시 확인합니다.</li>
+      <li>그다음에 로그인합니다. 비밀번호를 임의로 바꾸면 당사자 모르게 들어가는 셈이라 그 방법은 쓰지 않습니다.</li>
+      <li>작업이 끝난 계정은 즉시 접근을 끊습니다.</li>
+    </ul>
+    <div class="note">금융권 폐쇄망 환경에서는 DRM 복호화를 조율했고, 웹오피스에서 문서가 외부로 나가지 않도록 PDF 다운로드 제어를 개선했습니다. 번거로운 절차지만 자산과 계정을 다루는 자리에서는 이 순서를 지키는 사람이 필요하다고 봅니다.</div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="sec-h"><span class="sec-n">04</span><h2>경험의 범위와 경계</h2></div>
+    <div class="scope">
+      <div class="sbox can">
+        <h4>해 온 것</h4>
+        <ul>
+          <li>자사 솔루션의 사용자 수 기준 라이선스 산정·정리·재배정</li>
+          <li>퇴사·재입사 계정 처리, 오처리 복구, 대량 계정 매핑</li>
+          <li>사업 범위를 공수(M/M)로 환산하는 기준 수립</li>
+          <li>PM·PL로서 범위·일정·이슈 관리와 전사 사용자 교육</li>
+          <li>반복 업무를 생성형 AI 도구로 전환해 사업부문에 배포</li>
+        </ul>
+      </div>
+      <div class="sbox cant">
+        <h4>해 보지 않은 것</h4>
+        <ul>
+          <li>공급사를 상대로 한 산출·구매 조건 협상</li>
+          <li>상용 소프트웨어(Oracle·Microsoft·Adobe 등) 라이선스 정책과 계약 구조</li>
+          <li>라이선스 컴플라이언스 감사 대응</li>
+          <li>예산 직접 수립·집행, 대금 지급</li>
+          <li>IT 장비 재고와 원가 집계</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note"><b>그래서 지금 할 수 있는 말.</b> 받은 숫자를 그대로 쓰지 않고 한 번 더 세어 보는 일은 3년 10개월 동안 해 왔습니다. 2025년에는 부서 내 소수에게만 할당되는 인센티브를 연중 받았고, 2026년에는 그 인센티브 최고 등급을 받았습니다.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="fin">입사하면 먼저 <b>보유 자산과 계약, 실사용을 각각 다른 칸에 놓고 맞춰 보겠습니다.</b> 구매와 자산 관리도 결국 숫자를 세는 일이라고 봅니다.</p>
+    <div>김선우 · ksw9694@gmail.com · 010-4884-9694</div>
+    <div class="disc">
+      본 문서의 고객사는 업종·규모로 익명화했습니다. PM은 프로젝트 전체 책임, PL은 담당 모듈(그룹웨어) 구축 리드를 뜻합니다.
+      PL 사업 규모는 타 모듈을 포함한 전사 계약 기준이며 본인 단독 매출이 아닙니다.
+      누적 77건은 2022.07~2022.12 현장실습생 기간 20건을 포함한 수치이고, PM 39건은 2023.01 정규직 전환 이후 주담당 기준입니다.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
